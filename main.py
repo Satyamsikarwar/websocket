@@ -1,3 +1,19 @@
+# before moving to the code let's first understand the architechure of the wesocket
+# wesocket is very a bit different from the normal http requests where there is a client and server 
+# in http requests client sends a requests and thet request is received by the server then server resolves that request and as soon as the client gets the respone the connection between client and server breaks
+# but in websockets as long as client is online it is connected to the server 
+# frontend is our client and backend is over server
+
+# lets first understand the client side
+# so client which is our frontend has two methods one to receive message and one to send the message.
+# when client sends a message it is received by the server then server sends the message to the client who was meant to receive the message 
+# in the below code along with the message i am also passing a client id in the message body so that server can identify which client to send the message
+
+# similarly server side also has two methods to receive the message from a client and send message to a client
+
+
+
+
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.responses import HTMLResponse
 import json
